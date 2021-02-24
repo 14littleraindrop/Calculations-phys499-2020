@@ -1,0 +1,327 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13118,        319]
+NotebookOptionsPosition[     12638,        302]
+NotebookOutlinePosition[     13034,        318]
+CellTagsIndexPosition[     12991,        315]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"<<", "Bands`"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"padding", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"15", ",", " ", "30"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"15", ",", " ", "30"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"GraphicsGrid", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Show", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Plot", "[", 
+              RowBox[{
+               RowBox[{"Evaluate", "@", 
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"BandEnergy", "[", 
+                   RowBox[{"u", ",", " ", "q", ",", " ", "n"}], "]"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"n", ",", " ", "0", ",", " ", "4"}], "}"}]}], 
+                 "]"}]}], ",", 
+               RowBox[{"{", 
+                RowBox[{"q", ",", " ", 
+                 RowBox[{"-", "1"}], ",", " ", "1"}], "}"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"AspectRatio", "\[Rule]", "2"}], ",", " ", 
+               RowBox[{"ImagePadding", "\[Rule]", "padding"}], ",", " ", 
+               RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+               RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+               RowBox[{"GridLines", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"ListPlot", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"qq", ",", 
+                  RowBox[{"BandEnergy", "[", 
+                   RowBox[{"u", ",", " ", "qq", ",", " ", "n"}], "]"}]}], 
+                 "}"}], "}"}], ",", " ", 
+               RowBox[{"PlotStyle", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"Black", ",", " ", 
+                  RowBox[{"PointSize", "[", "Medium", "]"}]}], "}"}]}]}], 
+              "]"}]}], "\[IndentingNewLine]", "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Show", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Plot", "[", 
+              RowBox[{
+               RowBox[{"MathieuCharacteristicA", "[", 
+                RowBox[{"q", ",", 
+                 RowBox[{"u", "/", "4"}]}], "]"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"q", ",", " ", 
+                 RowBox[{"-", "5"}], ",", " ", "5"}], "}"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"Exclusions", "\[Rule]", 
+                RowBox[{"Range", "[", 
+                 RowBox[{
+                  RowBox[{"-", "5"}], ",", " ", "5"}], "]"}]}], ",", " ", 
+               RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", " ", 
+               RowBox[{"ImagePadding", "\[Rule]", "padding"}], ",", " ", 
+               RowBox[{"GridLines", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Range", "[", 
+                   RowBox[{
+                    RowBox[{"-", "5"}], ",", "5"}], "]"}], ",", " ", 
+                  "Automatic"}], "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"ListPlot", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"TranslateQuasimomentum", "[", 
+                   RowBox[{"qq", ",", " ", "n"}], "]"}], ",", 
+                  RowBox[{"MathieuCharacteristicA", "[", 
+                   RowBox[{
+                    RowBox[{"TranslateQuasimomentum", "[", 
+                    RowBox[{"qq", ",", " ", "n"}], "]"}], ",", 
+                    RowBox[{"u", "/", "4"}]}], "]"}]}], "}"}], "}"}], ",", 
+               " ", 
+               RowBox[{"PlotStyle", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"Black", ",", " ", 
+                  RowBox[{"PointSize", "[", "Medium", "]"}]}], "}"}]}]}], 
+              "]"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+          "}"}], "}"}], ",", " ", 
+        RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"GraphicsGrid", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"Plot", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Re", "[", 
+                RowBox[{"MathieuPotentialWaveFunction", "[", 
+                 RowBox[{
+                  RowBox[{"TranslateQuasimomentum", "[", 
+                   RowBox[{"qq", ",", " ", "n"}], "]"}], ",", " ", 
+                  RowBox[{"u", "/", "4"}], ",", " ", "z"}], "]"}], "]"}], ",",
+                " ", 
+               RowBox[{"Im", "[", 
+                RowBox[{"MathieuPotentialWaveFunction", "[", 
+                 RowBox[{
+                  RowBox[{"TranslateQuasimomentum", "[", 
+                   RowBox[{"qq", ",", " ", "n"}], "]"}], ",", " ", 
+                  RowBox[{"u", "/", "4"}], ",", " ", "z"}], "]"}], "]"}]}], 
+              "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", " ", "0", ",", " ", "8"}], "}"}], ",", " ", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Axes", "\[Rule]", "None"}], ",", " ", 
+             RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+             RowBox[{"PlotStyle", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Solid", ",", " ", "Dashed"}], "}"}]}]}], "]"}], "}"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"Plot", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{"MathieuPotentialWaveFunction", "[", 
+                RowBox[{
+                 RowBox[{"TranslateQuasimomentum", "[", 
+                  RowBox[{"qq", ",", " ", "n"}], "]"}], ",", " ", 
+                 RowBox[{"u", "/", "4"}], ",", " ", "z"}], "]"}], "]"}], "^", 
+              "2"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", " ", "0", ",", " ", "8"}], "}"}], ",", 
+             RowBox[{"Axes", "\[Rule]", "None"}]}], "]"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"Plot", "[", 
+            RowBox[{
+             RowBox[{"Cos", "[", 
+              RowBox[{"2", "*", "Pi", "*", "z"}], "]"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", " ", "0", ",", " ", "8"}], "}"}], ",", " ", 
+             RowBox[{"Axes", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{"Automatic", ",", "None"}], "}"}]}], ",", " ", 
+             RowBox[{"Ticks", "\[Rule]", "None"}]}], "]"}], "}"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", " ", 
+        RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "}"}], "]"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"u", ",", " ", "0", ",", " ", "50", ",", " ", "0.5"}], "}"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"qq", ",", " ", 
+     RowBox[{"-", "0.99999"}], ",", " ", "0.99999", ",", " ", "0.1"}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", " ", "0", ",", " ", "\"\<Band\>\""}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "0", ",", " ", "1", ",", " ", "2", ",", " ", "3", ",", " ", "4"}], 
+      "}"}]}], "}"}]}], "\[IndentingNewLine]", "]"}]}], "Input",
+ CellLabel->
+  "In[138]:=",ExpressionUUID->"7868d3a4-b135-4fb5-9dab-f38650004346"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 0, $CellContext`qq$$ = 
+    0, $CellContext`u$$ = 44.5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`u$$], 0, 50, 0.5}, {
+      Hold[$CellContext`qq$$], -0.99999, 0.99999, 0.1}, {{
+       Hold[$CellContext`n$$], 0, "Band"}, {0, 1, 2, 3, 4}}}, 
+    Typeset`size$$ = {697., {148., 153.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 
+        0, $CellContext`qq$$ = -0.99999, $CellContext`u$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Row[{
+         GraphicsGrid[{{
+            Show[
+             Plot[
+              Evaluate[
+               Table[
+                
+                Bands`BandEnergy[$CellContext`u$$, $CellContext`q, \
+$CellContext`n$$], {$CellContext`n$$, 0, 4}]], {$CellContext`q, -1, 1}, 
+              AspectRatio -> 2, ImagePadding -> $CellContext`padding, Frame -> 
+              True, Axes -> False, GridLines -> Automatic], 
+             ListPlot[{{$CellContext`qq$$, 
+                
+                Bands`BandEnergy[$CellContext`u$$, $CellContext`qq$$, \
+$CellContext`n$$]}}, PlotStyle -> {Black, 
+                PointSize[Medium]}]], 
+            Show[
+             Plot[
+              
+              MathieuCharacteristicA[$CellContext`q, $CellContext`u$$/
+               4], {$CellContext`q, -5, 5}, Exclusions -> Range[-5, 5], 
+              AspectRatio -> 1, ImagePadding -> $CellContext`padding, 
+              GridLines -> {
+                Range[-5, 5], Automatic}], 
+             ListPlot[{{
+                
+                Bands`TranslateQuasimomentum[$CellContext`qq$$, \
+$CellContext`n$$], 
+                MathieuCharacteristicA[
+                 
+                 Bands`TranslateQuasimomentum[$CellContext`qq$$, \
+$CellContext`n$$], $CellContext`u$$/4]}}, PlotStyle -> {Black, 
+                PointSize[Medium]}]]}}, ImageSize -> Large], 
+         GraphicsGrid[{{
+            Plot[{
+              Re[
+               Bands`MathieuPotentialWaveFunction[
+                
+                Bands`TranslateQuasimomentum[$CellContext`qq$$, \
+$CellContext`n$$], $CellContext`u$$/4, $CellContext`z]], 
+              Im[
+               Bands`MathieuPotentialWaveFunction[
+                
+                Bands`TranslateQuasimomentum[$CellContext`qq$$, \
+$CellContext`n$$], $CellContext`u$$/4, $CellContext`z]]}, {$CellContext`z, 0, 
+              8}, Axes -> None, PlotRange -> All, 
+             PlotStyle -> {$CellContext`Solid, Dashed}]}, {
+            Plot[Norm[
+               Bands`MathieuPotentialWaveFunction[
+                
+                Bands`TranslateQuasimomentum[$CellContext`qq$$, \
+$CellContext`n$$], $CellContext`u$$/4, $CellContext`z]]^2, {$CellContext`z, 0,
+               8}, Axes -> None]}, {
+            Plot[
+             Cos[(2 Pi) $CellContext`z], {$CellContext`z, 0, 8}, 
+             Axes -> {Automatic, None}, Ticks -> None]}}, ImageSize -> 
+          Small]}], 
+      "Specifications" :> {{$CellContext`u$$, 0, 50, 
+         0.5}, {$CellContext`qq$$, -0.99999, 0.99999, 
+         0.1}, {{$CellContext`n$$, 0, "Band"}, {0, 1, 2, 3, 4}}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{742., {233., 239.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.819424223458531*^9, 3.823116149334341*^9},
+ CellLabel->
+  "Out[140]=",ExpressionUUID->"2f885982-3915-4f55-8b89-51fc3cbf3f7a"]
+}, Open  ]]
+},
+WindowSize->{1071, 637},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7a82b262-5628-4ab5-9ea7-9f2b06a017a6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7732, 179, 577, "Input",ExpressionUUID->"7868d3a4-b135-4fb5-9dab-f38650004346"],
+Cell[8315, 203, 4307, 96, 491, "Output",ExpressionUUID->"2f885982-3915-4f55-8b89-51fc3cbf3f7a"]
+}, Open  ]]
+}
+]
+*)
+
