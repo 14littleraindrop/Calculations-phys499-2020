@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31511,        709]
-NotebookOptionsPosition[     30616,        686]
-NotebookOutlinePosition[     31013,        702]
-CellTagsIndexPosition[     30970,        699]
+NotebookDataLength[     50387,       1141]
+NotebookOptionsPosition[     48511,       1098]
+NotebookOutlinePosition[     48908,       1114]
+CellTagsIndexPosition[     48865,       1111]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,6 +25,13 @@ Cell["Wavefunctions overlap for Li and Yb Calculation", "Title",
   3.820070880651843*^9, 
   3.82007088219308*^9}},ExpressionUUID->"7a25b957-e6ff-414e-8b6d-\
 0c3a315b9fb5"],
+
+Cell[CellGroupData[{
+
+Cell["Setting parameters", "Subsection",
+ CellChangeTimes->{{3.823712801565736*^9, 3.82371281878588*^9}, 
+   3.8237130802322073`*^9},ExpressionUUID->"a3531f58-aa81-4faf-b230-\
+022534bbed9e"],
 
 Cell[BoxData[
  RowBox[{
@@ -39,6 +46,7 @@ Cell[BoxData[
     RowBox[{"$Path", "."}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"<<", " ", "Bands`"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Set", " ", "parameters"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
@@ -65,7 +73,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"integration", " ", "range"}], ",", " ", 
       RowBox[{"in", " ", "unit", " ", "of", " ", "lattice", " ", "sites"}]}], 
-     "*)"}]}]}]}]], "Input",
+     "*)"}], "\[IndentingNewLine]"}]}]}]], "Input",
  CellChangeTimes->{{3.820683800446788*^9, 3.820683831770501*^9}, {
    3.820684016207329*^9, 3.8206840472207813`*^9}, {3.8206841220379267`*^9, 
    3.820684294257929*^9}, {3.820684345407044*^9, 3.820684525150775*^9}, {
@@ -90,15 +98,34 @@ Cell[BoxData[
    3.821367998018592*^9}, {3.8215526454789953`*^9, 3.821552645614809*^9}, {
    3.821552712206005*^9, 3.821552713915303*^9}, {3.821553257976983*^9, 
    3.8215532581989737`*^9}, {3.821555476331406*^9, 3.821555485090616*^9}, {
-   3.822508785448586*^9, 3.8225087883313503`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"f2454e23-df45-4aff-bba0-afd12224d996"],
+   3.822508785448586*^9, 3.8225087883313503`*^9}, {3.823712160107992*^9, 
+   3.823712171709196*^9}, {3.823713085572801*^9, 3.823713092667564*^9}, {
+   3.823713170317189*^9, 
+   3.82371320503401*^9}},ExpressionUUID->"f2454e23-df45-4aff-bba0-\
+afd12224d996"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1 Dimensional Case", "Section",
+ CellChangeTimes->{{3.823712773270499*^9, 
+  3.823712787382921*^9}},ExpressionUUID->"dad6619c-afcb-4eef-89e4-\
+5b0ee8d146e5"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Visualizing wavefunctions of Li and Yb in the given potential\
+\>", "Subsection",
+ CellChangeTimes->{{3.823711868265415*^9, 3.823711879046586*^9}, {
+  3.823711913304291*^9, 3.823711935050559*^9}, {3.823713215206918*^9, 
+  3.82371321776779*^9}},ExpressionUUID->"2d7f5873-f95e-45c6-8030-\
+969c573b3f41"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
-   RowBox[{
-   "Plotting", " ", "the", " ", "real", " ", "and", " ", "imagenary", " ", 
-    "parts", " ", "of", " ", "the", " ", "wave", " ", "function"}], "*)"}], 
+   RowBox[{"Define", " ", "1", "D", " ", "wavefunction"}], "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
@@ -110,7 +137,243 @@ Cell[BoxData[
        RowBox[{"TranslateQuasimomentum", "[", 
         RowBox[{"q", ",", " ", "n"}], "]"}], ",", " ", 
        RowBox[{"u", "/", "4"}], ",", " ", "z"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Set", " ", "the", " ", "potentail", " ", "depth", " ", "for", " ", 
+     "Yb"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["U", "Yb"], " ", "=", " ", "10"}], ";", "  ", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"potential", " ", "depth", " ", "Yb", " ", "sees"}], ",", " ", 
+      RowBox[{"in", " ", "units", " ", "of", " ", "recoil", " ", "energy"}]}],
+      "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     SubscriptBox["U", "Li"], "=", 
+     RowBox[{
+      FractionBox["2.2", "29"], 
+      SubscriptBox["U", "Yb"]}]}], ";", "  ", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"potential", " ", "depth", " ", "Li", " ", "sees"}], ",", " ", 
+      RowBox[{"in", " ", "units", " ", "of", " ", "recoil", " ", "energy"}]}],
+      "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Ploting", " ", "wavefunctions", " ", "of", " ", "Li", " ", "and", " ", 
+      "Yb"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Re", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", " ", 
+        RowBox[{"Im", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", 
+        RowBox[{"Re", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Li"]}], "]"}], "]"}], ",", " ", 
+        RowBox[{"Im", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", " ", "0", ",", " ", "8"}], "}"}], ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Solid"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Dashed"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Solid"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Dashed"}], "}"}]}], " ", "}"}]}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", " ", 
+        RowBox[{
+        "\"\<lattice unit\>\"", ",", " ", "\"\<\[CapitalPsi](x)\>\""}], 
+        "}"}]}], ",", " ", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Re[Yb]\>\"", ",", " ", "\"\<Im[Yb]\>\"", ",", " ", 
+         "\"\<Re[Li]\>\"", ",", " ", "\"\<Im[Li]\>\""}], "}"}]}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", "\"\<Li & Yb wavefunctions\>\""}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Plotting", " ", "norm", " ", "of", " ", "Li", " ", "and", " ", "Yb"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", 
+        RowBox[{"Norm", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Orange", ",", "Solid"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Blue", ",", "Solid"}], "}"}]}], "}"}]}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<lattice unit\>\"", ",", " ", 
+         "\"\<|\[CapitalPsi](x)\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], 
+        "}"}]}], ",", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Yb\>\"", ",", " ", "\"\<Li\>\""}], "}"}]}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", "\"\<Li & Yb probability distribution\>\""}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Ploting", " ", 
+     SubscriptBox["\[CapitalPsi]", "Yb"], 
+     SubscriptBox["\[CapitalPsi]", "Li"]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Re", "[", 
+         RowBox[{
+          RowBox[{"Wavefunction", "[", 
+           RowBox[{"q", ",", "n", ",", 
+            SubscriptBox["U", "Yb"]}], "]"}], "*", 
+          RowBox[{"Conjugate", "[", 
+           RowBox[{"Wavefunction", "[", 
+            RowBox[{"q", ",", "n", ",", 
+             SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}], ",", 
+        RowBox[{"Im", "[", 
+         RowBox[{
+          RowBox[{"Wavefunction", "[", 
+           RowBox[{"q", ",", "n", ",", 
+            SubscriptBox["U", "Yb"]}], "]"}], "*", 
+          RowBox[{"Conjugate", "[", 
+           RowBox[{"Wavefunction", "[", 
+            RowBox[{"q", ",", "n", ",", 
+             SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Solid", ",", " ", "Dashed"}], "}"}]}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<lattice unit\>\"", ",", " ", 
+         "\"\<\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)\>\""}], "}"}]}], ",", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Re\>\"", ",", " ", "\"\<Im\>\""}], "}"}]}], ",", " ", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", "\"\<Li & Yb overlap wavefunction\>\""}]}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Ploting", " ", "|", 
+     RowBox[{
+      SubscriptBox["\[CapitalPsi]", "Yb"], 
+      SubscriptBox["\[CapitalPsi]", "Li"]}], "|"}], "*)"}], 
    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"Norm", "[", 
+       RowBox[{
+        RowBox[{"Wavefunction", "[", 
+         RowBox[{"q", ",", "n", ",", 
+          SubscriptBox["U", "Yb"]}], "]"}], "*", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Wavefunction", "[", 
+          RowBox[{"q", ",", "n", ",", 
+           SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<Norm of Li & Yb overlap wavefunction\>\""}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<lattice unit\>\"", ",", " ", 
+         "\"\<|\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], "}"}]}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.821365321732342*^9, 3.8213653230364447`*^9}, {
+   3.821367356921556*^9, 3.821367381687286*^9}, {3.8213675255543537`*^9, 
+   3.821367707217937*^9}, {3.8213678383760443`*^9, 3.821367927505772*^9}, {
+   3.821368029067141*^9, 3.821368030837536*^9}, {3.8213685109590693`*^9, 
+   3.821368561949524*^9}, {3.8213686586258287`*^9, 3.82136866962484*^9}, {
+   3.821368705530593*^9, 3.821368748717181*^9}, {3.821368965110011*^9, 
+   3.821368989807773*^9}, {3.821550792835432*^9, 3.821550952151207*^9}, {
+   3.821551088789263*^9, 3.821551160258759*^9}, {3.821552022434886*^9, 
+   3.821552194867413*^9}, {3.821552229225733*^9, 3.821552335368699*^9}, {
+   3.82155246809522*^9, 3.821552469539824*^9}, {3.821552750084354*^9, 
+   3.821552751300914*^9}, {3.8215531223268948`*^9, 3.821553151041988*^9}, {
+   3.8215531877486763`*^9, 3.8215532699816008`*^9}, {3.821553311620099*^9, 
+   3.8215533773910646`*^9}, {3.821553451743074*^9, 3.8215534533220987`*^9}, 
+   3.8215534871962967`*^9, {3.821553528119418*^9, 3.821553541626009*^9}, {
+   3.821555025027519*^9, 3.821555052212632*^9}, {3.82155510137027*^9, 
+   3.821555103712875*^9}, {3.821555135400635*^9, 3.8215551584359903`*^9}, {
+   3.821555199092229*^9, 3.8215552095777063`*^9}, {3.82155524201271*^9, 
+   3.821555243428101*^9}, {3.821555296901442*^9, 3.8215552995760736`*^9}, {
+   3.821555347860784*^9, 3.821555348210122*^9}, {3.821555515451195*^9, 
+   3.8215555386489553`*^9}, {3.821555691118782*^9, 3.8215557186871767`*^9}, {
+   3.82155576049277*^9, 3.8215558049312353`*^9}, {3.8215558569249*^9, 
+   3.82155590347399*^9}, {3.821556010861553*^9, 3.8215560402590847`*^9}, 
+   3.821556155801622*^9, {3.821966494098558*^9, 3.821966496178046*^9}, {
+   3.8225082219868383`*^9, 3.822508223152878*^9}, {3.822511629423229*^9, 
+   3.822511648210682*^9}, {3.82251167862182*^9, 3.8225116793062553`*^9}, {
+   3.823711937633162*^9, 3.823712096102449*^9}, {3.823713221507394*^9, 
+   3.823713241049273*^9}},ExpressionUUID->"4624322a-7226-4f41-a70f-\
+2ce2e0e8f000"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Calculating overlap and maximum of the product wave function of Li and Yb\
+\>", "Subsection",
+ CellChangeTimes->{{3.823711790028653*^9, 
+  3.823711830576663*^9}},ExpressionUUID->"f3385970-5e88-4c64-8cd0-\
+7e3cf7e4739f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "*", "Defining", " ", "function", " ", "to", " ", "calcualet", " ", 
+    "inner", " ", "product", " ", "and", " ", "overlap"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
    RowBox[{
     RowBox[{
      RowBox[{"InnerProduct", "[", 
@@ -151,142 +414,123 @@ Cell[BoxData[
            FractionBox["2.2", "29"], "u"}], ",", 
           RowBox[{
            FractionBox["2.2", "29"], "u"}]}], "]"}], "]"}], "2"]]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"Plot", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         SubscriptBox["U", "Yb"], ",", 
-         RowBox[{
-          FractionBox["2.2", "29"], 
-          SubscriptBox["U", "Yb"]}]}], "}"}], ",", " ", 
-       RowBox[{"{", 
-        RowBox[{
-         SubscriptBox["U", "Yb"], ",", "0", ",", "50"}], "}"}], ",", 
-       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-       RowBox[{"AxesLabel", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-         "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
-          "\"\<U/recoil energy\>\""}], "}"}]}], ",", " ", 
-       RowBox[{"PlotLegends", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{"\"\<Yb\>\"", ",", " ", "\"\<Li\>\""}], "}"}]}]}], "]"}], 
-     ";", "\[IndentingNewLine]", 
-     RowBox[{"ListPlot", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"{", " ", 
-          RowBox[{
-           SubscriptBox["U", "Yb"], ",", 
-           RowBox[{"Overlap", "[", 
-            RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
-             SubscriptBox["U", "Yb"]}], "]"}]}], "}"}], ",", 
-         RowBox[{"{", 
-          RowBox[{
-           SubscriptBox["U", "Yb"], ",", " ", "0", ",", "50"}], "}"}]}], 
-        "]"}], ",", " ", 
-       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-       RowBox[{"AxesLabel", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-         "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
-          "\"\<|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \
-\(2\)]\)/|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Li\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], "}"}]}], ",", 
-       
-       RowBox[{"PlotLabel", "\[Rule]", "\"\<Yb-Li overlap, \>\""}]}], "]"}], 
-     ";", "\[IndentingNewLine]", 
-     RowBox[{"Plot", "[", 
-      RowBox[{
-       RowBox[{"First", "[", 
-        RowBox[{"FindMaximum", "[", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"Norm", "[", 
-             RowBox[{
-              RowBox[{"Wavefunction", "[", 
-               RowBox[{"q", ",", "n", ",", 
-                SubscriptBox["U", "Yb"]}], "]"}], "*", 
-              RowBox[{"Conjugate", "[", 
-               RowBox[{"Wavefunction", "[", 
-                RowBox[{"q", ",", "n", ",", 
-                 RowBox[{
-                  FractionBox["2.2", "29"], 
-                  SubscriptBox["U", "Yb"]}]}], "]"}], "]"}]}], "]"}], ",", 
-            RowBox[{"0", "\[LessEqual]", "z", "\[LessEqual]", " ", "1"}]}], 
-           "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"z", ",", "0"}], "}"}]}], "]"}], "]"}], ",", " ", 
-       RowBox[{"{", 
-        RowBox[{
-         SubscriptBox["U", "Yb"], ",", "0", ",", "50"}], "}"}], ",", " ", 
-       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-       RowBox[{"AxesLabel", "\[Rule]", 
-        RowBox[{"{", " ", 
-         RowBox[{
-         "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", 
-          "\"\<max(|\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\!\(\*SuperscriptBox[\(|\), \(2\)]\))\>\""}], "}"}]}], ",", 
-       RowBox[{
-       "PlotLabel", "\[Rule]", 
-        "\"\<max of |\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\!\(\*SuperscriptBox[\(|\), \(2\)]\) over one unit cell\>\""}]}], "]"}], 
-     ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   RowBox[{"ListLinePlot", "[", 
+   RowBox[{"(*", 
     RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"{", " ", 
-        RowBox[{
-         SubscriptBox["U", "Yb"], ",", 
-         RowBox[{"Overlap", "[", 
-          RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
-           SubscriptBox["U", "Yb"]}], "]"}]}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{
-         SubscriptBox["U", "Yb"], ",", " ", "0", ",", "500", ",", "25"}], 
-        "}"}]}], "]"}], ",", " ", 
-     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-     RowBox[{"AxesLabel", "\[Rule]", 
+    "Ploting", " ", "potentials", " ", "Li", " ", "and", " ", "Yb", " ", 
+     "see", " ", "with", " ", "respect", " ", "to", " ", 
+     SubscriptBox["U", "Yb"]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
       RowBox[{"{", 
        RowBox[{
-       "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
-        "\"\<|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \
+        SubscriptBox["U", "Yb"], ",", 
+        RowBox[{
+         FractionBox["2.2", "29"], 
+         SubscriptBox["U", "Yb"]}]}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox["U", "Yb"], ",", "0", ",", "50"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
+         "\"\<U/recoil energy\>\""}], "}"}]}], ",", " ", 
+      RowBox[{"PlotLegends", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Yb\>\"", ",", " ", "\"\<Li\>\""}], "}"}]}]}], "]"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Ploting", " ", "overlap", " ", "of", " ", "Li", " ", "and", " ", "Yb", 
+     " ", "with", " ", "respect", " ", "to", " ", 
+     SubscriptBox["U", "Yb"]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", " ", 
+         RowBox[{
+          SubscriptBox["U", "Yb"], ",", 
+          RowBox[{"Overlap", "[", 
+           RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
+            SubscriptBox["U", "Yb"]}], "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["U", "Yb"], ",", " ", "0", ",", "50"}], "}"}]}], "]"}],
+       ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
+         "\"\<|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \(Yb\)]\)\!\(\
+\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\)\
+\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \
 \(2\)]\)/|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
 \(Li\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
 \)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], "}"}]}], ",", 
-     
-     RowBox[{"PlotLabel", "\[Rule]", "\"\<Yb-Li overlap, \>\""}]}], "]"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"notify", "[", "asc_", "]"}], ":=", 
-    RowBox[{"RunProcess", "[", 
-     RowBox[{"{", 
-      RowBox[{"\"\<osascript\>\"", ",", "\"\<-e\>\"", ",", 
-       RowBox[{
-        RowBox[{
-        "StringTemplate", "[", 
-         "\"\<display notification \\\"`message`\\\" with title \\\"`title`\\\
-\"\>\"", "]"}], "[", "asc", "]"}]}], "}"}], "]"}]}], "\n", 
-   RowBox[{"notify", "[", 
-    RowBox[{"<|", 
+      
+      RowBox[{"PlotLabel", "\[Rule]", "\"\<Yb-Li overlap, \>\""}]}], "]"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Ploting", " ", "max", " ", "of"}], " ", "|", 
      RowBox[{
-      RowBox[{"\"\<message\>\"", "\[Rule]", "\"\<I'm finished!\>\""}], ",", 
-      RowBox[{"\"\<title\>\"", "\[Rule]", "\"\<Mathematica\>\""}]}], "|>"}], 
-    "]"}], "\n", "\[IndentingNewLine]"}]}]], "Input",
+      SubscriptBox["\[CapitalPsi]", "Yb"], 
+      SuperscriptBox[
+       SubscriptBox["\[CapitalPsi]", "Li"], "*"]}], "|", " ", 
+     RowBox[{"withing", " ", "one", " ", "unit", " ", "cell"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["U", "Yb"], ",", 
+          RowBox[{"First", "[", 
+           RowBox[{"FindMaximum", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Norm", "[", 
+                RowBox[{
+                 RowBox[{"Wavefunction", "[", 
+                  RowBox[{"q", ",", "n", ",", 
+                   SubscriptBox["U", "Yb"]}], "]"}], "*", 
+                 RowBox[{"Conjugate", "[", 
+                  RowBox[{"Wavefunction", "[", 
+                   RowBox[{"q", ",", "n", ",", 
+                    RowBox[{
+                    FractionBox["2.2", "29"], 
+                    SubscriptBox["U", "Yb"]}]}], "]"}], "]"}]}], "]"}], ",", 
+               RowBox[{"0", "\[LessEqual]", "z", "\[LessEqual]", " ", "1"}]}],
+               "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", "0"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+        " ", 
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["U", "Yb"], ",", "0", ",", "10", ",", "2"}], "}"}]}], 
+       "]"}], ",", " ", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", " ", 
+        RowBox[{
+        "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", 
+         "\"\<max(|\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)|)\>\""}], "}"}]}], ",", 
+      RowBox[{
+      "PlotLabel", "\[Rule]", 
+       "\"\<max of |\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)| over one unit cell\>\""}]}], "]"}], ";"}]}]}]], "Input",
  CellChangeTimes->{{3.820684639185816*^9, 3.820684665212534*^9}, {
    3.820867304460555*^9, 3.820867328425075*^9}, {3.8208673748047857`*^9, 
    3.820867454032752*^9}, {3.8208674862167997`*^9, 3.8208675939553547`*^9}, {
@@ -367,220 +611,72 @@ Cell[BoxData[
    3.822505077761754*^9, 3.822505078346808*^9}, {3.8225051421754217`*^9, 
    3.822505142755225*^9}, {3.822505244276387*^9, 3.8225052480216312`*^9}, {
    3.822505328365974*^9, 3.822505328817685*^9}, {3.8225053679133043`*^9, 
-   3.822505368262253*^9}, {3.82250553667241*^9, 3.822505541962523*^9}},
- CellLabel->"In[36]:=",ExpressionUUID->"c7b024f0-7ba2-4145-8fb9-8fcbf32bfe1d"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{
-    SubscriptBox["U", "Yb"], " ", "=", " ", "10"}], ";"}], "  ", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"potential", " ", "depth", " ", "Yb", " ", "sees"}], ",", " ", 
-    RowBox[{"in", " ", "units", " ", "of", " ", "recoil", " ", "energy"}]}], 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    SubscriptBox["U", "Li"], "=", 
-    RowBox[{
-     FractionBox["2.2", "29"], 
-     SubscriptBox["U", "Yb"]}]}], ";"}], "  ", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"potential", " ", "depth", " ", "Li", " ", "sees"}], ",", " ", 
-    RowBox[{"in", " ", "units", " ", "of", " ", "recoil", " ", "energy"}]}], 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"Plot", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"Re", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", " ", 
-       RowBox[{"Im", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", 
-       RowBox[{"Re", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Li"]}], "]"}], "]"}], ",", " ", 
-       RowBox[{"Im", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "}"}], ",", " ", 
-     RowBox[{"{", 
-      RowBox[{"z", ",", " ", "0", ",", " ", "8"}], "}"}], ",", " ", 
-     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-     RowBox[{"PlotStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"Orange", ",", "Solid"}], "}"}], ",", " ", 
-        RowBox[{"{", 
-         RowBox[{"Orange", ",", "Dashed"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"Blue", ",", "Solid"}], "}"}], ",", " ", 
-        RowBox[{"{", 
-         RowBox[{"Blue", ",", "Dashed"}], "}"}]}], " ", "}"}]}], ",", " ", 
-     RowBox[{"AxesLabel", "\[Rule]", 
-      RowBox[{"{", " ", 
-       RowBox[{"\"\<lattice unit\>\"", ",", " ", "\"\<\[CapitalPsi](x)\>\""}],
-        "}"}]}], ",", " ", 
-     RowBox[{"PlotLegends", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-       "\"\<Re[Yb]\>\"", ",", " ", "\"\<Im[Yb]\>\"", ",", " ", 
-        "\"\<Re[Li]\>\"", ",", " ", "\"\<Im[Li]\>\""}], "}"}]}], ",", 
-     RowBox[{"PlotLabel", "\[Rule]", "\"\<Li & Yb wavefunctions\>\""}]}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"Plot", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"Norm", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Yb"]}], "]"}], "]"}], ",", 
-       RowBox[{"Norm", "[", 
-        RowBox[{"Wavefunction", "[", 
-         RowBox[{"q", ",", "n", ",", 
-          SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", " ", 
-     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-     RowBox[{"PlotStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"Orange", ",", "Solid"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"Blue", ",", "Solid"}], "}"}]}], "}"}]}], ",", " ", 
-     RowBox[{"AxesLabel", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-       "\"\<lattice unit\>\"", ",", " ", 
-        "\"\<|\[CapitalPsi](x)\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], 
-       "}"}]}], ",", 
-     RowBox[{"PlotLegends", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"\"\<Yb\>\"", ",", " ", "\"\<Li\>\""}], "}"}]}], ",", 
-     RowBox[{
-     "PlotLabel", "\[Rule]", "\"\<Li & Yb probability distribution\>\""}]}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"Plot", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"Re", "[", 
-        RowBox[{
-         RowBox[{"Wavefunction", "[", 
-          RowBox[{"q", ",", "n", ",", 
-           SubscriptBox["U", "Yb"]}], "]"}], "*", 
-         RowBox[{"Conjugate", "[", 
-          RowBox[{"Wavefunction", "[", 
-           RowBox[{"q", ",", "n", ",", 
-            SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}], ",", 
-       RowBox[{"Im", "[", 
-        RowBox[{
-         RowBox[{"Wavefunction", "[", 
-          RowBox[{"q", ",", "n", ",", 
-           SubscriptBox["U", "Yb"]}], "]"}], "*", 
-         RowBox[{"Conjugate", "[", 
-          RowBox[{"Wavefunction", "[", 
-           RowBox[{"q", ",", "n", ",", 
-            SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}]}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", 
-     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-     RowBox[{"PlotStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"Solid", ",", " ", "Dashed"}], "}"}]}], ",", 
-     RowBox[{"AxesLabel", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-       "\"\<lattice unit\>\"", ",", " ", 
-        "\"\<\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\>\""}], "}"}]}], ",", 
-     RowBox[{"PlotLegends", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"\"\<Re\>\"", ",", " ", "\"\<Im\>\""}], "}"}]}], ",", " ", 
-     RowBox[{
-     "PlotLabel", "\[Rule]", "\"\<Li & Yb overlap wavefunction\>\""}]}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Plot", "[", 
-   RowBox[{
-    RowBox[{"Norm", "[", 
-     RowBox[{
-      RowBox[{"Wavefunction", "[", 
-       RowBox[{"q", ",", "n", ",", 
-        SubscriptBox["U", "Yb"]}], "]"}], "*", 
-      RowBox[{"Conjugate", "[", 
-       RowBox[{"Wavefunction", "[", 
-        RowBox[{"q", ",", "n", ",", 
-         SubscriptBox["U", "Li"]}], "]"}], "]"}]}], "]"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"z", ",", "0", ",", "8"}], "}"}], ",", " ", 
-    RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
-    RowBox[{
-    "PlotLabel", "\[Rule]", "\"\<Norm of Li & Yb overlap wavefunction\>\""}], 
-    ",", " ", 
-    RowBox[{"AxesLabel", "\[Rule]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<lattice unit\>\"", ",", " ", 
-       "\"\<|\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
-\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
-\)\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], "}"}]}]}], "]"}], 
-  ";"}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.821365321732342*^9, 3.8213653230364447`*^9}, {
-   3.821367356921556*^9, 3.821367381687286*^9}, {3.8213675255543537`*^9, 
-   3.821367707217937*^9}, {3.8213678383760443`*^9, 3.821367927505772*^9}, {
-   3.821368029067141*^9, 3.821368030837536*^9}, {3.8213685109590693`*^9, 
-   3.821368561949524*^9}, {3.8213686586258287`*^9, 3.82136866962484*^9}, {
-   3.821368705530593*^9, 3.821368748717181*^9}, {3.821368965110011*^9, 
-   3.821368989807773*^9}, {3.821550792835432*^9, 3.821550952151207*^9}, {
-   3.821551088789263*^9, 3.821551160258759*^9}, {3.821552022434886*^9, 
-   3.821552194867413*^9}, {3.821552229225733*^9, 3.821552335368699*^9}, {
-   3.82155246809522*^9, 3.821552469539824*^9}, {3.821552750084354*^9, 
-   3.821552751300914*^9}, {3.8215531223268948`*^9, 3.821553151041988*^9}, {
-   3.8215531877486763`*^9, 3.8215532699816008`*^9}, {3.821553311620099*^9, 
-   3.8215533773910646`*^9}, {3.821553451743074*^9, 3.8215534533220987`*^9}, 
-   3.8215534871962967`*^9, {3.821553528119418*^9, 3.821553541626009*^9}, {
-   3.821555025027519*^9, 3.821555052212632*^9}, {3.82155510137027*^9, 
-   3.821555103712875*^9}, {3.821555135400635*^9, 3.8215551584359903`*^9}, {
-   3.821555199092229*^9, 3.8215552095777063`*^9}, {3.82155524201271*^9, 
-   3.821555243428101*^9}, {3.821555296901442*^9, 3.8215552995760736`*^9}, {
-   3.821555347860784*^9, 3.821555348210122*^9}, {3.821555515451195*^9, 
-   3.8215555386489553`*^9}, {3.821555691118782*^9, 3.8215557186871767`*^9}, {
-   3.82155576049277*^9, 3.8215558049312353`*^9}, {3.8215558569249*^9, 
-   3.82155590347399*^9}, {3.821556010861553*^9, 3.8215560402590847`*^9}, 
-   3.821556155801622*^9, {3.821966494098558*^9, 3.821966496178046*^9}, {
-   3.8225082219868383`*^9, 3.822508223152878*^9}, {3.822511629423229*^9, 
-   3.822511648210682*^9}, {3.82251167862182*^9, 
-   3.8225116793062553`*^9}},ExpressionUUID->"4624322a-7226-4f41-a70f-\
-2ce2e0e8f000"],
+   3.822505368262253*^9}, {3.82250553667241*^9, 3.822505541962523*^9}, {
+   3.8231776122578487`*^9, 3.823177657129869*^9}, {3.82317769214834*^9, 
+   3.823177694714198*^9}, {3.8231777448185863`*^9, 3.823177875458181*^9}, {
+   3.8231780436949577`*^9, 3.823178104983049*^9}, {3.823178137194693*^9, 
+   3.823178162573001*^9}, {3.823178334775373*^9, 3.823178340893425*^9}, {
+   3.823178416299527*^9, 3.823178422486147*^9}, {3.823178463634149*^9, 
+   3.8231784780906754`*^9}, {3.823178603496207*^9, 3.823178619852002*^9}, {
+   3.823178657702207*^9, 3.823178698604755*^9}, {3.823178737236133*^9, 
+   3.823178737775054*^9}, {3.823178910348406*^9, 3.8231789183846188`*^9}, {
+   3.8231789689000683`*^9, 3.8231789704648743`*^9}, {3.8231792147723017`*^9, 
+   3.82317921529305*^9}, {3.823179265026608*^9, 3.82317926909011*^9}, {
+   3.823179365928846*^9, 3.823179377442388*^9}, {3.823179411585239*^9, 
+   3.823179452543366*^9}, {3.8231795620793*^9, 3.823179569810062*^9}, {
+   3.8231796354100924`*^9, 3.823179679183774*^9}, {3.823179756961608*^9, 
+   3.823179773429474*^9}, {3.8231802829761963`*^9, 3.823180285343652*^9}, {
+   3.823180412982007*^9, 3.8231804160978813`*^9}, {3.823180710342844*^9, 
+   3.823180729614451*^9}, {3.823180790233176*^9, 3.823180802910811*^9}, {
+   3.823180838361576*^9, 3.823180840967692*^9}, 3.823180873492922*^9, {
+   3.823180985827125*^9, 3.823181039375512*^9}, {3.8231813042608967`*^9, 
+   3.823181388346385*^9}, {3.8231816001817617`*^9, 3.823181607669183*^9}, {
+   3.8231817456411448`*^9, 3.8231818881062517`*^9}, 3.8231819719676437`*^9, {
+   3.823182078801886*^9, 3.8231821676883707`*^9}, {3.823182212134489*^9, 
+   3.823182236177685*^9}, {3.823182272017538*^9, 3.823182275160234*^9}, {
+   3.8231823183010902`*^9, 3.823182345613781*^9}, {3.8231824135251923`*^9, 
+   3.823182561216446*^9}, {3.8231826154561777`*^9, 3.823182630706605*^9}, {
+   3.823182662551978*^9, 3.823182675988941*^9}, {3.8231827964722548`*^9, 
+   3.823182798222917*^9}, {3.823182857692709*^9, 3.823182890976219*^9}, {
+   3.823183024005143*^9, 3.823183084205229*^9}, {3.823183128119958*^9, 
+   3.823183197536396*^9}, {3.823183241281458*^9, 3.823183243601369*^9}, {
+   3.8231833327501383`*^9, 3.823183344145281*^9}, {3.823183987161275*^9, 
+   3.823184031477853*^9}, {3.823184081384059*^9, 3.8231841097340307`*^9}, {
+   3.823184149342997*^9, 3.823184154423184*^9}, {3.8231842200872307`*^9, 
+   3.823184222858724*^9}, {3.8231843471795588`*^9, 3.823184361358274*^9}, {
+   3.8231845900563717`*^9, 3.8231846473643093`*^9}, {3.823184718918137*^9, 
+   3.82318471947823*^9}, {3.823215303044462*^9, 3.823215324794176*^9}, {
+   3.823215376156927*^9, 3.8232153896747923`*^9}, {3.823215542013981*^9, 
+   3.82321558465378*^9}, {3.8232158861498623`*^9, 3.823215886760989*^9}, {
+   3.823215925970673*^9, 3.823215932193493*^9}, {3.823216569822771*^9, 
+   3.8232166032714653`*^9}, {3.823216636360895*^9, 3.823216678840431*^9}, {
+   3.82321670967327*^9, 3.823216747623528*^9}, {3.823216921447757*^9, 
+   3.823216952700117*^9}, {3.8232169977426443`*^9, 3.823217012283461*^9}, {
+   3.823217047393791*^9, 3.8232170498651333`*^9}, {3.8237109433603497`*^9, 
+   3.823710954449267*^9}, {3.823711021478327*^9, 3.823711056561887*^9}, {
+   3.82371133503959*^9, 3.823711346151514*^9}, {3.823711444872553*^9, 
+   3.8237114450034*^9}, {3.8237114820263643`*^9, 3.823711483242127*^9}, {
+   3.823712191492353*^9, 
+   3.823712380359782*^9}},ExpressionUUID->"c7b024f0-7ba2-4145-8fb9-\
+8fcbf32bfe1d"]
+}, Open  ]],
 
 Cell[CellGroupData[{
+
+Cell["\<\
+Cross check: When potential is large, approximate using quadratic function\
+\>", "Subsection",
+ CellChangeTimes->{{3.823712387805953*^9, 
+  3.823712424278964*^9}},ExpressionUUID->"cd38d5af-f35e-497a-8b8a-\
+a11deb02fc1a"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
    RowBox[{
-    RowBox[{"cross", " ", "check"}], ",", " ", 
-    RowBox[{"when", " ", "U", " ", "is", " ", "large"}], ",", " ", 
-    RowBox[{"potential", " ", "is", " ", "quadratic"}]}], "*)"}], 
+   "Oscilator", " ", "ground", " ", "state", " ", "function", " ", "of", " ", 
+    "an", " ", "atom", " ", "as", " ", "a", " ", "function", " ", "of", " ", 
+    RowBox[{"atom", "'"}], "s", " ", "recoil", " ", "energy"}], "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
@@ -610,25 +706,34 @@ Cell[BoxData[
     RowBox[{
     "where", " ", "s", " ", "is", " ", "the", " ", "potential", " ", "energy",
       " ", "in", " ", "terms", " ", "of", " ", "recoil"}], "*)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Evaluate", " ", "overlap", " ", "and", " ", "max", " ", "when", " ", 
+     "potentail", " ", "depth", " ", "is", " ", "large"}], "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
-     SubscriptBox["U", "Yb"], "=", "500"}], ";"}], "\[IndentingNewLine]", 
+     SubscriptBox["u", "Yb"], "=", "500"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
-     SubscriptBox["U", "Li"], "=", 
+     SubscriptBox["u", "Li"], "=", 
      RowBox[{
       FractionBox["2.2", "29"], 
-      SubscriptBox["U", "Yb"]}]}], ";"}], "\[IndentingNewLine]", 
+      SubscriptBox["u", "Yb"]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Plotting", " ", "approximated", " ", "Li", " ", "and", " ", "Yb", " ", 
+     "wavefunction"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Plot", "[", 
      RowBox[{
       RowBox[{"{", 
        RowBox[{
         RowBox[{"OscilatorGroundState", "[", 
-         SubscriptBox["U", "Yb"], "]"}], ",", 
+         SubscriptBox["u", "Yb"], "]"}], ",", 
         RowBox[{"OscilatorGroundState", "[", 
-         SubscriptBox["U", "Li"], "]"}]}], "}"}], ",", 
+         SubscriptBox["u", "Li"], "]"}]}], "}"}], ",", 
       RowBox[{"{", 
        RowBox[{"x", ",", 
         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
@@ -645,42 +750,349 @@ Cell[BoxData[
         "\"\<lattice unit\>\"", ",", 
          "\"\<\!\(\*SubscriptBox[\(\[Psi]\), \(0\)]\)(x)\>\""}], "}"}]}]}], 
      "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   SuperscriptBox[
-    RowBox[{"(", 
-     RowBox[{"Integrate", "[", 
-      RowBox[{
-       RowBox[{"Norm", "[", 
-        RowBox[{
-         RowBox[{"OscilatorGroundState", "[", 
-          SubscriptBox["U", "Yb"], "]"}], "*", 
-         RowBox[{"Conjugate", "[", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Evaluate", " ", "the", " ", "overlap", " ", "at", " ", "the", " ", 
+     "given", " ", "potential", " ", "above"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{
           RowBox[{"OscilatorGroundState", "[", 
-           SubscriptBox["U", "Li"], "]"}], "]"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"x", ",", " ", 
-         RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ")"}], "2"], 
-   "\[IndentingNewLine]"}]}]], "Input",
- CellChangeTimes->CompressedData["
-1:eJwdzEsowwEAx/HZhja1FLWxtozbEKtpWan9RcRkSGkHadnFI7RFeazU1rKo
-KWryuMwjZVrGHLFNIY2Eg0fb2oHZ1rJHynu//+HX5/LrK1ANtaupFAqFnx48
-uvVyHscjhL66kAtXlmo6IH0h3AnL30JKGL271kD1+5UOhkbYeug9mJiFshaJ
-Bc7lCB2w+JfrhrU6ThyWJfN/yT67mfqU1knx0uGzQq+CO+ceUn/wqw9WMb1a
-qBwbnSL/99vTsMvtMMIzebcVqtaJCGQobKQzra44fJWd/sHV8voX2mSE2JWK
-w5Da1LtBT7s2QtjhZ2D5BDLVbS5o1yzXZaYtEhuboPNBNgiP5Y4JuCJXGaAp
-g7UIG3tCVqg/NNnggC2yB/0lBg/kE5tB6NuPkd708xPwYjj6AbdEBT/QklLS
-stCJ+xnwUsFjQWmvPQ+mcmMcaJ4386Ai4BNA0XdSCOWB7FLY8BKsgAmtpBL+
-AzX0+jM=
-  "],ExpressionUUID->"2aa4c6bd-ec3c-4735-86f8-39ca15202d5d"],
+           SubscriptBox["u", "Yb"], "]"}], "*", 
+          RowBox[{"Conjugate", "[", 
+           RowBox[{"OscilatorGroundState", "[", 
+            SubscriptBox["u", "Li"], "]"}], "]"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", " ", 
+          RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}], ")"}], "2"], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plotting", " ", "|", 
+     RowBox[{
+      SubscriptBox["\[CapitalPsi]", "Yb"], 
+      SuperscriptBox[
+       SubscriptBox["\[CapitalPsi]", "Li"], "*"]}], "|"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"Norm", "[", 
+       RowBox[{
+        RowBox[{"OscilatorGroundState", "[", 
+         SubscriptBox["u", "Yb"], "]"}], "*", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"OscilatorGroundState", "[", 
+          SubscriptBox["u", "Li"], "]"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Find", " ", "max", " ", "of"}], " ", "|", 
+     RowBox[{
+      SubscriptBox["\[CapitalPsi]", "Yb"], 
+      SuperscriptBox[
+       SubscriptBox["\[CapitalPsi]", "Li"], "*"]}], "|", " ", 
+     RowBox[{
+     "within", " ", "one", " ", "unit", " ", "cell", " ", "at", " ", "the", 
+      " ", "given", " ", "potential", " ", "above"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"FindMaximum", "[", 
+     RowBox[{
+      RowBox[{"Norm", "[", 
+       RowBox[{
+        RowBox[{"OscilatorGroundState", "[", 
+         SubscriptBox["u", "Yb"], "]"}], "*", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"OscilatorGroundState", "[", 
+          SubscriptBox["u", "Li"], "]"}], "]"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.82250823046347*^9, 3.822508248819521*^9}, {
+   3.822508697925001*^9, 3.8225087193618183`*^9}, {3.822508759309836*^9, 
+   3.822508958526114*^9}, {3.822509046498217*^9, 3.822509088732655*^9}, {
+   3.822509155865943*^9, 3.82250924972818*^9}, {3.82250946531391*^9, 
+   3.822509592874772*^9}, {3.8225099687654123`*^9, 3.822510064654806*^9}, {
+   3.822510098346632*^9, 3.822510118437587*^9}, {3.822510868134871*^9, 
+   3.822510870149618*^9}, {3.822510935871567*^9, 3.822511014438746*^9}, {
+   3.8225110837020693`*^9, 3.82251111730746*^9}, {3.8225111656175957`*^9, 
+   3.8225113869468727`*^9}, {3.8225119700513163`*^9, 3.82251197341602*^9}, {
+   3.822512022072209*^9, 3.822512126164173*^9}, {3.823116090161818*^9, 
+   3.823116121632163*^9}, {3.823117611134034*^9, 3.8231176980451193`*^9}, {
+   3.823117836871335*^9, 3.823117842543584*^9}, {3.823118884857872*^9, 
+   3.823118932225113*^9}, {3.823119210026698*^9, 3.823119325603119*^9}, {
+   3.8231194030718517`*^9, 3.823119528437688*^9}, {3.823119647293003*^9, 
+   3.823119724334902*^9}, {3.8231197673961697`*^9, 3.8231199081606293`*^9}, {
+   3.823120157195449*^9, 3.823120159490829*^9}, {3.8231202809506617`*^9, 
+   3.823120319420018*^9}, {3.823120360787311*^9, 3.8231204108424797`*^9}, {
+   3.823120463029604*^9, 3.823120496916113*^9}, {3.8231205415122347`*^9, 
+   3.82312058347082*^9}, {3.823120620517769*^9, 3.823120654996254*^9}, {
+   3.823120727655785*^9, 3.823120728246252*^9}, {3.823120767121982*^9, 
+   3.823120769733026*^9}, {3.8231772634783297`*^9, 3.823177355829967*^9}, {
+   3.823177386264817*^9, 3.823177396070133*^9}, {3.82317750690522*^9, 
+   3.823177549845064*^9}, 3.823711115074061*^9, {3.8237111655067596`*^9, 
+   3.823711193012883*^9}, {3.8237112307080317`*^9, 3.823711272887652*^9}, {
+   3.823711541657939*^9, 3.823711619207136*^9}, {3.8237116523820868`*^9, 
+   3.823711704326887*^9}, {3.823711765550349*^9, 3.823711766549226*^9}, {
+   3.823712429386484*^9, 3.823712653801671*^9}, {3.8237126861819553`*^9, 
+   3.823712739440731*^9}, {3.823712833906748*^9, 
+   3.823712839061493*^9}},ExpressionUUID->"2aa4c6bd-ec3c-4735-86f8-\
+39ca15202d5d"]
+}, Open  ]]
+}, Open  ]],
 
-Cell[BoxData["0.8229610879639558`"], "Output",
- CellChangeTimes->{
-  3.823119668033923*^9, 3.823119702545126*^9, {3.823119782485303*^9, 
-   3.8231197955365667`*^9}, 3.82311983776593*^9, 3.8231199126138153`*^9, {
-   3.823120393848477*^9, 3.823120411495509*^9}, {3.823120485751418*^9, 
-   3.823120498069121*^9}, {3.8231205427981777`*^9, 3.823120585509923*^9}, {
-   3.823120626091642*^9, 3.8231206556003847`*^9}, 3.823120731677156*^9},
- CellLabel->
-  "Out[139]=",ExpressionUUID->"b81d3b76-5057-4a3e-b7b1-e145a2f69bbf"]
+Cell[CellGroupData[{
+
+Cell["3 Dimensional case", "Section",
+ CellChangeTimes->{{3.8237128590464993`*^9, 
+  3.8237128668885612`*^9}},ExpressionUUID->"1f07842e-093d-4cf7-aa01-\
+c2f260aef9f9"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Calculating overlap and maximum of the product wave function of Li and Yb\
+\>", "Subsection",
+ CellChangeTimes->{{3.823712885316101*^9, 
+  3.823712925758067*^9}},ExpressionUUID->"a51b8da3-aa09-4dac-9c66-\
+c6d8488635ad"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Defining", " ", "3", "D", " ", "wavefunction"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Wavefunction3D", "[", 
+      RowBox[{"q_", ",", " ", "n_", ",", " ", "u_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"MathieuPotentialWaveFunction", "[", 
+       RowBox[{
+        RowBox[{"TranslateQuasimomentum", "[", 
+         RowBox[{"q", ",", " ", "n"}], "]"}], ",", " ", 
+        RowBox[{"u", "/", "4"}], ",", " ", 
+        SubscriptBox["z", "x"]}], "]"}], "*", 
+      RowBox[{"MathieuPotentialWaveFunction", "[", 
+       RowBox[{
+        RowBox[{"TranslateQuasimomentum", "[", 
+         RowBox[{"q", ",", " ", "n"}], "]"}], ",", " ", 
+        RowBox[{"u", "/", "4"}], ",", " ", 
+        SubscriptBox["z", "y"]}], "]"}], "*", 
+      RowBox[{"MathieuPotentialWaveFunction", "[", 
+       RowBox[{
+        RowBox[{"TranslateQuasimomentum", "[", 
+         RowBox[{"q", ",", " ", "n"}], "]"}], ",", " ", 
+        RowBox[{"u", "/", "4"}], ",", " ", 
+        SubscriptBox["z", "z"]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"InnerProduct3D", "[", 
+      RowBox[{
+      "min_", ",", " ", "max_", ",", " ", "q_", ",", "n_", ",", "u1_", ",", 
+       " ", "u2_"}], "]"}], ":=", 
+     RowBox[{"NIntegrate", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Wavefunction3D", "[", 
+         RowBox[{"q", ",", " ", "n", ",", " ", "u1"}], "]"}], "*", 
+        RowBox[{"Conjugate", "[", 
+         RowBox[{"Wavefunction3D", "[", 
+          RowBox[{"q", ",", "n", ",", "u2"}], "]"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["z", "x"], ",", " ", "min", ",", " ", "max"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["z", "y"], ",", " ", "min", ",", " ", "max"}], "}"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["z", "z"], ",", " ", "min", ",", " ", "max"}], "}"}], 
+       ",", 
+       RowBox[{"PrecisionGoal", "\[Rule]", "8"}], ",", " ", 
+       RowBox[{"WorkingPrecision", "\[Rule]", "16"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Overlap3D", "[", 
+      RowBox[{
+      "min_", ",", "max_", ",", " ", "q_", ",", " ", "n_", ",", " ", "u_"}], 
+      "]"}], ":=", " ", 
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"Norm", "[", 
+        RowBox[{"InnerProduct", "[", 
+         RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
+          RowBox[{
+           FractionBox["2.2", "29"], "u"}], ",", "u"}], "]"}], "]"}], "2"], 
+      SuperscriptBox[
+       RowBox[{"Norm", "[", 
+        RowBox[{"InnerProduct", "[", 
+         RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
+          RowBox[{
+           FractionBox["2.2", "29"], "u"}], ",", 
+          RowBox[{
+           FractionBox["2.2", "29"], "u"}]}], "]"}], "]"}], "2"]]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Plotting", " ", "overlap", " ", "of", " ", "Li", " ", "and", " ", "Yb", 
+     " ", "as", " ", "a", " ", "function", " ", "of", " ", 
+     SubscriptBox["U", "Yb"]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", " ", 
+        RowBox[{
+         SubscriptBox["U", "Yb"], ",", 
+         RowBox[{"Overlap", "[", 
+          RowBox[{"min", ",", "max", ",", "q", ",", "n", ",", 
+           SubscriptBox["U", "Yb"]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["U", "Yb"], ",", " ", "0", ",", "500", ",", "25"}], 
+        "}"}]}], "]"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", " ", 
+        "\"\<|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \
+\(2\)]\)/|\[Integral]\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Li\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)\[DifferentialD]x\!\(\*SuperscriptBox[\(|\), \(2\)]\)\>\""}], "}"}]}], ",", 
+     
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Yb-Li overlap, \>\""}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Plotting", " ", "max", " ", "of"}], " ", "|", 
+     RowBox[{
+      SubscriptBox["\[CapitalPsi]", "Yb"], 
+      SuperscriptBox[
+       SubscriptBox["\[CapitalPsi]", "Li"], "*"]}], "|", " ", 
+     RowBox[{"as", " ", "a", " ", "function", " ", "of", " ", 
+      SubscriptBox["U", "Yb"]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["U", "Yb"], ",", 
+         RowBox[{"First", "[", 
+          RowBox[{"FindMaximum", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Norm", "[", 
+               RowBox[{
+                RowBox[{"Wavefunction3D", "[", 
+                 RowBox[{"q", ",", "n", ",", 
+                  SubscriptBox["U", "Yb"]}], "]"}], "*", 
+                RowBox[{"Conjugate", "[", 
+                 RowBox[{"Wavefunction3D", "[", 
+                  RowBox[{"q", ",", "n", ",", 
+                   RowBox[{
+                    FractionBox["2.2", "29"], 
+                    SubscriptBox["U", "Yb"]}]}], "]"}], "]"}]}], "]"}], ",", 
+              RowBox[{"0", "\[LessEqual]", 
+               SubscriptBox["z", "x"], "\[LessEqual]", " ", "1"}], ",", 
+              RowBox[{"0", "\[LessEqual]", 
+               SubscriptBox["z", "y"], "\[LessEqual]", " ", "1"}], ",", 
+              RowBox[{"0", "\[LessEqual]", 
+               SubscriptBox["z", "z"], "\[LessEqual]", " ", "1"}]}], "}"}], 
+            ",", 
+            RowBox[{"{", 
+             RowBox[{
+              SubscriptBox["z", "x"], ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              SubscriptBox["z", "y"], ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              SubscriptBox["z", "z"], ",", "0"}], "}"}]}], "]"}], "]"}]}], 
+        "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox["U", "Yb"], ",", "0", ",", "500", ",", "25"}], "}"}]}], 
+      "]"}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", " ", 
+       RowBox[{
+       "\"\<\!\(\*SubscriptBox[\(U\), \(Yb\)]\)\>\"", ",", 
+        "\"\<max(|\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)|)\>\""}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<max of |\!\(\*SubscriptBox[\(\[CapitalPsi]\), \
+\(Yb\)]\)\!\(\*SuperscriptBox[SubscriptBox[\(\[CapitalPsi]\), \(Li\)], \(*\)]\
+\)| over one unit cell\>\""}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"notify", "[", "asc_", "]"}], ":=", 
+    RowBox[{"RunProcess", "[", 
+     RowBox[{"{", 
+      RowBox[{"\"\<osascript\>\"", ",", "\"\<-e\>\"", ",", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", 
+         "\"\<display notification \\\"`message`\\\" with title \\\"`title`\\\
+\"\>\"", "]"}], "[", "asc", "]"}]}], "}"}], "]"}]}], "\n", 
+   RowBox[{"notify", "[", 
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"\"\<message\>\"", "\[Rule]", "\"\<I'm finished!\>\""}], ",", 
+      RowBox[{"\"\<title\>\"", "\[Rule]", "\"\<Mathematica\>\""}]}], "|>"}], 
+    "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.823712901384737*^9, 3.823712901954039*^9}, {
+   3.82371324800117*^9, 3.823713287422295*^9}, {3.823713546451459*^9, 
+   3.823713564780003*^9}, {3.823713627990505*^9, 3.8237136655282516`*^9}, {
+   3.823713759597847*^9, 3.823713830890575*^9}, {3.823714270427006*^9, 
+   3.823714324490572*^9}, {3.823714371954808*^9, 3.8237144338529787`*^9}, {
+   3.823718315733447*^9, 3.823718319853594*^9}, 3.823718386838472*^9, {
+   3.823718588321494*^9, 3.8237187323246202`*^9}, {3.8237188107863293`*^9, 
+   3.823718815356883*^9}, {3.823718865048408*^9, 3.823718873248878*^9}, 
+   3.823718917001053*^9, {3.823719158584178*^9, 3.823719193312501*^9}, {
+   3.8237193480410137`*^9, 3.823719356714591*^9}, {3.823719517339891*^9, 
+   3.823719600669221*^9}},ExpressionUUID->"6b5f61fa-a520-4f6e-8752-\
+17c3ed648ba3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"notify", "[", "asc_", "]"}], ":=", 
+  RowBox[{"RunProcess", "[", 
+   RowBox[{"{", 
+    RowBox[{"\"\<osascript\>\"", ",", "\"\<-e\>\"", ",", 
+     RowBox[{
+      RowBox[{
+      "StringTemplate", "[", 
+       "\"\<display notification \\\"`message`\\\" with title \\\"`title`\\\"\
+\>\"", "]"}], "[", "asc", "]"}]}], "}"}], "]"}]}], "\n", 
+ RowBox[{"notify", "[", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"\"\<message\>\"", "\[Rule]", "\"\<I'm finished!\>\""}], ",", 
+    RowBox[{"\"\<title\>\"", "\[Rule]", "\"\<Mathematica\>\""}]}], "|>"}], 
+  "]"}]}], "Input",ExpressionUUID->"fae3dd64-470c-461b-a19a-e628dea2378f"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -702,13 +1114,33 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 242, 4, 160, "Title",ExpressionUUID->"7a25b957-e6ff-414e-8b6d-0c3a315b9fb5"],
-Cell[825, 28, 3433, 65, 199, "Input",ExpressionUUID->"f2454e23-df45-4aff-bba0-afd12224d996"],
-Cell[4261, 95, 13889, 275, 801, "Input",ExpressionUUID->"c7b024f0-7ba2-4145-8fb9-8fcbf32bfe1d"],
-Cell[18153, 372, 8369, 200, 585, "Input",ExpressionUUID->"4624322a-7226-4f41-a70f-2ce2e0e8f000"],
+Cell[580, 22, 242, 4, 98, "Title",ExpressionUUID->"7a25b957-e6ff-414e-8b6d-0c3a315b9fb5"],
 Cell[CellGroupData[{
-Cell[26547, 576, 3523, 96, 332, "Input",ExpressionUUID->"2aa4c6bd-ec3c-4735-86f8-39ca15202d5d"],
-Cell[30073, 674, 515, 8, 34, "Output",ExpressionUUID->"b81d3b76-5057-4a3e-b7b1-e145a2f69bbf"]
+Cell[847, 30, 190, 3, 54, "Subsection",ExpressionUUID->"a3531f58-aa81-4faf-b230-022534bbed9e"],
+Cell[1040, 35, 3611, 69, 199, "Input",ExpressionUUID->"f2454e23-df45-4aff-bba0-afd12224d996"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4688, 109, 163, 3, 67, "Section",ExpressionUUID->"dad6619c-afcb-4eef-89e4-5b0ee8d146e5"],
+Cell[CellGroupData[{
+Cell[4876, 116, 311, 6, 54, "Subsection",ExpressionUUID->"2d7f5873-f95e-45c6-8030-969c573b3f41"],
+Cell[5190, 124, 9973, 232, 542, "Input",ExpressionUUID->"4624322a-7226-4f41-a70f-2ce2e0e8f000"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15200, 361, 229, 5, 54, "Subsection",ExpressionUUID->"f3385970-5e88-4c64-8cd0-7e3cf7e4739f"],
+Cell[15432, 368, 15708, 292, 329, "Input",ExpressionUUID->"c7b024f0-7ba2-4145-8fb9-8fcbf32bfe1d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31177, 665, 230, 5, 54, "Subsection",ExpressionUUID->"cd38d5af-f35e-497a-8b8a-a11deb02fc1a"],
+Cell[31410, 672, 7325, 175, 395, "Input",ExpressionUUID->"2aa4c6bd-ec3c-4735-86f8-39ca15202d5d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38784, 853, 167, 3, 67, "Section",ExpressionUUID->"1f07842e-093d-4cf7-aa01-c2f260aef9f9"],
+Cell[CellGroupData[{
+Cell[38976, 860, 229, 5, 54, "Subsection",ExpressionUUID->"a51b8da3-aa09-4dac-9c66-c6d8488635ad"],
+Cell[39208, 867, 8608, 208, 513, "Input",ExpressionUUID->"6b5f61fa-a520-4f6e-8752-17c3ed648ba3"],
+Cell[47819, 1077, 652, 16, 52, "Input",ExpressionUUID->"fae3dd64-470c-461b-a19a-e628dea2378f"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
